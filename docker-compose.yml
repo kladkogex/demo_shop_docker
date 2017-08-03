@@ -3,6 +3,7 @@ version: '3.0'
 services:
   rails-shop:
     build: .
+    restart: always
     ports:
       - "80:3000"
     container_name: demo_shop
