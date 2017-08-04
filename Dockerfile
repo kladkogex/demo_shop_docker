@@ -16,4 +16,4 @@ RUN rails g spree_gateway:install --auto_run_migrations=true
 
 EXPOSE 3000 
 
-ENTRYPOINT ["rails", "server"]
+ENTRYPOINT ["RAILS_ENV=production ","rails", "server"]
