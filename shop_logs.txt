@@ -1,0 +1,19 @@
+CREATE TABLE IF NOT EXISTS shop_logs
+          (kudu_id BIGINT,
+          kudu_processed_at STRING,
+          messages STRING,
+          severity STRING,
+          method STRING,
+          path STRING,
+          format_name STRING,
+          controller STRING,
+          action STRING,
+          status INT,
+          duration DOUBLE,
+          view_name DOUBLE,
+          db DOUBLE,
+          location_name STRING,
+          PRIMARY KEY(kudu_id, kudu_processed_at))
+          PARTITION BY HASH PARTITIONS 16
+          STORED AS KUDU
+          TBLPROPERTIES ( 'kudu.num_tablet_replicas' =  '1', 'kudu.table_name' = 'shop_logs');
