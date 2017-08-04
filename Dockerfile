@@ -8,7 +8,7 @@ RUN git clone --depth 1 https://github.com/kladkogex/demo_shop demo_shop
 
 WORKDIR /demo_shop
 
-ENV RAILS_ENV production
+#ENV RAILS_ENV production
 
 RUN bundle install
 
