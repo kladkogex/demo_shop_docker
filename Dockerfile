@@ -8,6 +8,8 @@ RUN git clone --depth 1 https://github.com/kladkogex/demo_shop demo_shop
 
 WORKDIR /demo_shop
 
+ENV RAILS_ENV production
+
 RUN bundle install
 
 RUN rails g spree:install -f --auto-accept --user_class=Spree::User
@@ -16,4 +18,4 @@ RUN rails g spree_gateway:install --auto_run_migrations=true
 
 EXPOSE 3000 
 
-ENTRYPOINT ["RAILS_ENV=production ","rails", "server"]
+ENTRYPOINT ["rails", "server"]
