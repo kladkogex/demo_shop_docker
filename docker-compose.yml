@@ -5,10 +5,14 @@ services:
     build: .
     restart: always
     ports:
-      - "80:3000"
+      - "83:3000"
     container_name: demo_shop
     volumes:
       - rails:/demo_shop
+    env_file:
+      - ./prod.env
+
+
 volumes:
   rails:
    driver_opts:
